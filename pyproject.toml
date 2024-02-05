@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "keyvox"
-version = "0.1.0"
-description = "keyvox.dev official package"
+version = "0.1.4"
+description = "keyvox.dev official package for python"
 authors = ["keyvox-dev <157120239+keyvox-dev@users.noreply.github.com>"]
 readme = "README.md"
 
