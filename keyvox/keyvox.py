@@ -1,12 +1,13 @@
 from requests import get, Response
 from keyvox._article import Article
-import urllib.parse
+from keyvox._tag import Tag
 
 class KeyVox:
     def __init__(self, api_key: str, base_url: str = 'https://keyvox.dev/api'):
         self.api_key = api_key
         self.base_url = base_url
         self.articles = Article(self)
+        self.tags = Tag(self)
 
     def fetch_data(self, url: str, params: dict) -> Response:
         try:

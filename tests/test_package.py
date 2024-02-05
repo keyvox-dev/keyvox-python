@@ -12,13 +12,25 @@ kv = KeyVox(api_key=api_key, base_url=base_url)
 
 
 @pytest.mark.skip
-def test_list():
+def test_articles_list():
     articles = kv.articles.list({
         'page': 2
     })
     pprint(articles)
 
 
-def test_retrieve():
+@pytest.mark.skip
+def test_articles_retrieve():
     article = kv.articles.retrieve(os.getenv('ARTICLE_ID'))
     pprint(article)
+
+
+@pytest.mark.skip
+def test_tags_list():
+    tags = kv.tags.list()
+    pprint(tags)
+
+
+def test_tags_retrieve():
+    tag = kv.tags.retrieve(os.getenv('TAG_ID'))
+    pprint(tag)
