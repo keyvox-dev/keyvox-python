@@ -3,6 +3,7 @@ import pytest
 from pprint import pprint
 from dotenv import load_dotenv
 from keyvox.keyvox import KeyVox
+import json
 
 load_dotenv()
 api_key = os.getenv('API_KEY')
@@ -31,6 +32,21 @@ def test_tags_list():
     pprint(tags)
 
 
+@pytest.mark.skip
 def test_tags_retrieve():
     tag = kv.tags.retrieve(os.getenv('TAG_ID'))
+    tag = json.dumps(tag, indent=4)
     pprint(tag)
+
+
+@pytest.mark.skip
+def test_authors_list():
+    authors = kv.authors.list()
+    authors = json.dumps(authors, indent=4)
+    pprint(authors)
+
+
+def test_authors_retrieve():
+    author = kv.authors.retrieve(os.getenv('AUTHOR_ID'))
+    author = json.dumps(author, indent=4)
+    pprint(author)
